@@ -2,10 +2,10 @@
         - main
 
         pool:
-          vmImage: 'ubuntu-latest' # set to windows-latest or another Windows vmImage for Windows builds
+          vmImage: 'ubuntu-1604' # set to windows-latest or another Windows vmImage for Windows builds
 
         variables:
-          imageName: 'nginx-custom'
+          imageName: 'pipelines-docker'
 
         steps:
         - task: Docker@2
@@ -13,4 +13,4 @@
           inputs:
             repository: $(imageName)
             command: build
-            Dockerfile: ./Dockerfile
+            Dockerfile: app/Dockerfile
